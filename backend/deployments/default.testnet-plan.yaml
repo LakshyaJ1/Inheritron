@@ -1,0 +1,32 @@
+---
+id: 0
+name: Testnet deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: vault-manager1
+            expected-sender: ST39A1Q149BKVJMEAC9FE35YFPTBKRJQ0EK8QJFHM
+            cost: 98000
+            path: "contracts\\vault-manager1.clar"
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: time-lock-controller1
+            expected-sender: ST39A1Q149BKVJMEAC9FE35YFPTBKRJQ0EK8QJFHM
+            cost: 101700
+            path: "contracts\\time-lock-controller1.clar"
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: oracle-integration1
+            expected-sender: ST39A1Q149BKVJMEAC9FE35YFPTBKRJQ0EK8QJFHM
+            cost: 86560
+            path: "contracts\\oracle-integration1.clar"
+            anchor-block-only: true
+            clarity-version: 3
+      epoch: "3.2"
